@@ -1,0 +1,10 @@
+customtkinter
+numpy
+sounddevice
+soundfile
+PyMuPDF
+python-docx
+pydub
+requests
+onnxruntime
+kokoro-onnx

@@ -16,7 +16,7 @@ A desktop app that reads PDF and Word documents aloud with the [Kokoro](https://
 Speech is generated on one thread and played on another, so playback stays smooth while the next sentences are synthesized.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[PDF / DOCX] -->|PyMuPDF / python-docx| B[Extracted text]
     B --> C[Split into sentences]
     C --> D[Generator thread<br/>Kokoro ONNX TTS]
@@ -30,7 +30,7 @@ The playback thread writes audio in small 2048-sample chunks, which is what make
 
 ### Audiobook export: parallel synthesis
 ```mermaid
-flowchart LR
+flowchart TD
     A[Page range] --> B[Sentences]
     B --> C[ThreadPoolExecutor<br/>N worker threads]
     C --> D[Results keyed by sentence index]
